@@ -1,2 +1,2 @@
-# Demo.CustomerInfo.API
-Demo.CustomerInfo.API
+# Demo.Customer.API
+Demo.Customer.API
