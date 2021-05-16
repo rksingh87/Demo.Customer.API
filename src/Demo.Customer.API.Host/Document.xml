@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Demo.Customer.API.Host</name>
+    </assembly>
+    <members>
+        <member name="M:Demo.Customer.API.Host.Controllers.AlbumController.#ctor(Demo.Customer.API.Core.Provider.Interface.IAlbumProvider)">
+            <summary>
+            Album Controller - Test C
+            </summary>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Controllers.AlbumController.GetResult">
+            <summary>
+            Get All Albums
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Controllers.AlbumController.GetResultById(System.Int32)">
+            <summary>
+            Get All Albums
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Controllers.AlbumController.GetResultV2">
+            <summary>
+            Get Albums Version 2
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.Dependencies.DependencyInjectionContainerService.RegisterDependencyInjectionContainer(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Resolve And Register Dependencies into ServiceCollection Injection Container
+            </summary>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.Dependencies.DependencyInjectionContainerService.RegisterDependencies(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.Dictionary{Demo.Customer.API.Host.Middlewares.Dependencies.ObjectScope,System.Collections.Generic.Dictionary{System.Type,System.Type}})">
+            <summary>
+            Register the Resolved Dependencies
+            </summary>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.Dependencies.DependencyInjectionContainerService.RegisterAsSingleton(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.Dictionary{System.Type,System.Type})">
+            <summary>
+            Register the given Dependencies as Singleton
+            </summary>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.Dependencies.DependencyInjectionContainerService.RegisterAsTransient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.Dictionary{System.Type,System.Type})">
+            <summary>
+            Register the given Dependencies as Transient
+            </summary>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.Dependencies.DependencyInjectionContainerService.RegisterAsScoped(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Collections.Generic.Dictionary{System.Type,System.Type})">
+            <summary>
+            Register the given Dependencies as Scoped
+            </summary>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.Dependencies.DependencyInjectionContainerService.ResolveDependencies(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Fetch the assembly information from the appsetting section and create the dictionary of Resolutions for DI
+            </summary>
+            <param name="configuration"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.ExceptionHandlerService.UseExceptionHandlerService(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Configure Exception Handler
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.SwaggerService.AddSwaggerServiceConfiguration(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Add Swagger Configuration
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:Demo.Customer.API.Host.Middlewares.SwaggerService.UseSwaggerUI(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Swagger Configuration For Application Builder
+            </summary>
+            <param name="app"></param>
+        </member>
+    </members>
+</doc>
