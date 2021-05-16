@@ -4,6 +4,8 @@ using System.Text;
 
 namespace Demo.Customer.API.Core.Entities
 {
+
+    [Serializable]
     public class Album
     {
 

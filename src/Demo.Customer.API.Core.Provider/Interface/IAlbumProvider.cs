@@ -19,6 +19,6 @@ namespace Demo.Customer.API.Core.Provider.Interface
         /// Get Album By Id
         /// </summary>
         /// <returns></returns>
-        public Album GetAlbumById();
+        public Album GetAlbumById(int albumId);
     }
 }

@@ -12,6 +12,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Demo.Customer.API.Host.Middlewares;
 using Demo.Customer.API.Host.Middlewares.Dependencies;
+using System.Text.Json;
+using Demo.Customer.API.Infrastructure.Caching.Extension;
 
 namespace Demo.Customer.API.Host
 {
@@ -29,7 +31,14 @@ namespace Demo.Customer.API.Host
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+                options.JsonSerializerOptions.DictionaryKeyPolicy = null;
+                options.JsonSerializerOptions.IgnoreNullValues = true;
+                options.JsonSerializerOptions.WriteIndented = true;
+            });
+
             services.AddApiVersioning(o =>
             {
                 o.DefaultApiVersion = new ApiVersion(1, 0);
@@ -43,19 +52,17 @@ namespace Demo.Customer.API.Host
             });
             services.AddSwaggerServiceConfiguration(Configuration, environment);
             services.RegisterDependencyInjectionContainer(Configuration);
+
+            services.AddDistributedCacheConfiguration(Configuration);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseExceptionHandlerService();
             app.UseSwaggerUI();
             app.UseHttpsRedirection();
-
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -1,6 +1,7 @@
 ﻿using Demo.Customer.API.Core.Entities;
 using Demo.Customer.API.Core.Entities.Common;
 using Demo.Customer.API.Core.Provider.Interface;
+using Demo.Customer.API.Infrastructure.Caching;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace Demo.Customer.API.Host.Controllers
 
 
         private readonly IAlbumProvider albumProvider = null;
+        
 
         /// <summary>
         /// Album Controller - Test C
@@ -57,7 +59,7 @@ namespace Demo.Customer.API.Host.Controllers
         [ProducesResponseType(statusCode: StatusCodes.Status500InternalServerError, type: typeof(ErrorResult))]
         public ActionResult GetResultById([FromRoute] int id)
         {
-            return Ok(null);
+            return Ok(albumProvider.GetAlbumById(id));
         }
 
 

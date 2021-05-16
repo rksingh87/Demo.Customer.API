@@ -21,7 +21,6 @@ namespace Demo.Customer.API.Infrastructure.Caching.Extension
                         break;
                     }
             }
-            services.AddSingleton<ICacheProvider, CacheProvider>();
         }
     }
 }
